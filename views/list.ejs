@@ -1,0 +1,29 @@
+
+<%- include('header'); -%>
+    <!-- this is example of EJS  -->
+    <!-- <% if(listTitle === "Saturday" || listTitle === "Sunday"){ %>   
+        <h1 style="color:purple">It's a <%=listTitle%> !</h1>
+    <% }else{ %>
+        <h1 style="color: aqua;">It's a <%=listTitle%> !</h1>
+    <% } %> -->
+    
+    <div class="box" id="heading">
+        <h1><%=listTitle%></h1>
+    </div>
+    
+    
+    <div class="box">
+            <% for(let i=0; i<newListItems.length; i++) { %>
+                <div class="item">
+                    <input type="checkbox" >
+                    <p> <%= newListItems[i] %> </p>
+                </div>
+            <% } %>
+
+            <form class="item" action="/" method="post">
+                <input type="text" name="newItem" placeholder="New item" autocomplete="off">
+                <button type="submit" name="list" value=<%= listTitle %>>+</button>
+            </form>
+    </div>
+
+<%- include('header'); -%>
